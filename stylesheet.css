@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+/*--
+background - #fff8e9 (255,248,233)
+blue - #394f5e   (57,79,94)
+dark orange - #b94531 (185,69,49)
+
+*/
+
+
+/*---GENERAL STYLE---*/
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: center;
+    color: #394f5e;
+    background-color: #fff8e9;
+}
+
+h2 {
+    font: bold 1.2em Times,serif;
+    text-transform: uppercase;
+    color: #b94531;
+    letter-spacing: .4em;
+}
+
+dt {
+    font-weight: bold;
+    color: #394f5e;
+}
+
+h1 {
+    font: bold 2.2em Times,serif;
+    color: #394f5e;
+    text-shadow: .05em .05em .1em gray;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+/*---HERO IMAGE/HEADER----*/
+
+.hero_image {
+    background-image: linear-gradient(rgba(0, 0,  0, 0.4), rgba(0, 0, 0, 0.4)),url(images/coffee_shop.jpg);
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.hero_header {
+    text-align: left;
+    position: absolute;
+    color: white;
+    top: 40%;
+    text-shadow: .05em .05em .1em black;
+    font-size: 3em;
+    margin: 20px;
+}
+
+/*---NAV STYLE--*/
+/*list style removes bullets*/
+
+.main_nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background-color: rgb(57, 79, 94);
+    padding: .3em;
+    margin: 0;
+    margin: 0 auto;
+    max-width: 1200px;
+
+}
+
+.main_nav a{
+    color: white;
+    padding: 60px 40px;
+    text-decoration: none;
+}
+
+.main_nav a:hover {
+    background-color: white;
+    color: rgb(57, 79, 94);
+}
+
+li.logo {
+    margin-right: auto;
+}
+
+/*---MENU STYLE---*/
+
+#drinks, #bakery, #snacks {
+    padding: 5px 20px;
+    margin: 10px 20px;
+    background-color: rgba(57,79,94,.25);
+    border: 2px solid;
+}
+
+.price {
+    font-style: italic;
+    color: #b94531;
+}
+
+/*---GRID INDEX PAGE---*/
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+        'welcome  welcome  welcome'
+        'hlight1  hlight2  hlight3'
+        'about    about    about'
+        'product1 product2 product3'
+        'review   review   review'
+    ;
+}
+
+#welcome {
+    grid-area: welcome;
+    object-fit: cover;
+}
+
+#hlight1 {
+    grid-area: hlight1;
+    object-fit: cover;
+}
+
+#hlight2 {
+    grid-area: hlight2;
+    object-fit: cover;
+}
+
+#hlight3 {
+    grid-area: hlight3;
+    object-fit: cover;
+}
+
+#about {
+    grid-area: about;
+    object-fit: cover;
+}
+
+#product1 {
+    grid-area: product1;
+    object-fit: cover;
+}
+
+#product2 {
+    grid-area: product2;
+    object-fit: cover;
+}
+
+#product3 {
+    grid-area: product3;
+    object-fit: cover;
+}
+
+#review {
+    grid-area: review;
+    object-fit: cover;
+}
+
+#menu_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 15px;
+    justify-content: center;
+    align-content: center;
+}
+
+.menu_item {
+    float: left;
+}
+
+/*---grid styles----*/
+
+#welcome {
+    margin: 0px 15px 0px 30px;
+    padding: 60px 0px 60px 0px;
+}
+
+#hlight1, #hlight2, #hlight3 {
+    margin: 20px;
+}
+
+#about {
+    margin: 60px;
+}
+
+#product1, #product2, #product3 {
+    margin: 20px;
+}
+
+#review {
+    margin: 20px;
+}
+
+/*----MEDIA QUERY----*/
+
+@media screen and (max-width: 800px) {
+    #container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(7 auto);
+        grid-template-areas: 
+        'welcome    welcome'
+        'hlight1    hlight2'
+        'hlight3    hlight3'
+        'about      about'
+        'product1   product2'
+        'product3   product3'
+        'review     review'
+        ;
+
+        justify-items: center;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, auto);
+        grid-template-areas: 
+        'welcome'
+        'hlight1'
+        'hlight2'
+        'hlight3'
+        'about'
+        'product1'
+        'product2'
+        'product3'
+        'review'
+        ;
+        justify-items: center;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+}
